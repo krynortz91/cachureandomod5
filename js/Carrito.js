@@ -4,5 +4,4 @@
     }
 }
 
-console.log('hola hola')
 export default Carrito;
