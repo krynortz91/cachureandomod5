@@ -7,33 +7,8 @@ const carrito= new Carrito('productos');
 //console.table(carrito)
 
 let URLProductos = 'https://slifer.bsite.net/td-producto';
-let URLProductosAdd = 'https://slifer.bsite.net/td-producto';
 let datos;
-/*
-async function sucursal(){
 
-    let respuesta = await fetch(URLSucursal);
-    datos = await respuesta.json();
-    console.log(datos);
-
-}
-
-async function categoria(){
-
-    let respuesta = await fetch(URLCategoria);
-    datos = await respuesta.json();
-    console.table(datos);
-
-}*/
-
-/*
-async function producto(){
-
-    let respuesta = await fetch(URLProductos);
-    datos = await respuesta.json();
-    console.table(datos);
-
-}*/
 
 //Mostrar Productos
 async function producto(){
@@ -48,43 +23,44 @@ async function producto(){
     }      
 }
 
-
 //Agregar Productos
-/*async function agregarProducto(){
-
+/*
+async function agregarProducto(){
     try{
-    const respuesta = await fetch(URLProductos, { 
-    method: 'POST',
-    credentials: 'same-origin', 
-    headers: { 'Content-Type': 'application/json' }, 
-    body: JSON.stringify({
-        "id": Producto.id,
-        "nombre": "prueba",
-        "precio": 0,
-        "link": "/prueba",
-        "stock": 4,
-        "etiqueta": "prueba",
-        "descripcion": "prueba",
-        "idCategoria": 6,
-        "idSucursal": 6
-      })  
+        const respuesta = await fetch(URLProductos, { 
+        method: 'POST',
+        credentials: 'same-origin', 
+        headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify({
+            "id": Producto.id,
+            "nombre": "Lamparas de Pikachu",
+            "precio": 40000,
+            "link": "/img/pikachu.png",
+            "stock": 10,
+            "etiqueta": "pikachu",
+            "descripcion": "Lamparas de Pikachus kawai",
+            "idCategoria": 29,
+            "idSucursal": 6
+        })  
 }); 
+
 
     datos = await respuesta.json()
     console.log(datos);
 
-    }catch(error){
+ }catch(error){
         console.log('Error: '+error);
-    }
-}*/
+ }
+}
+
 
 //Borrar producto
+let id = '1034';
 
-let id = '1007';
 
 async function borrarProducto(id){
     try{                     
-        const respuesta = await fetch(`${URLProductosAdd}/${id}`, { 
+        const respuesta = await fetch(`${URLProductos}/${id}`, { 
         method: 'DELETE'}); 
     
         datos = await respuesta.json()
@@ -95,35 +71,29 @@ async function borrarProducto(id){
     }
 }
 
-
 //Modificar productos
 async function modificarProducto(){
-
     try{
         const respuesta = await fetch(URLProductos,{ 
             method: 'PUT',
             credentials: 'same-origin', 
             headers: { 'Content-Type': 'application/json' }, 
             body: JSON.stringify({
-                "id": 1009,
-                "nombre": "Almohada de plumas de ganso",
-                "precio": 20000,
-                "link": "/img/asdad",
-                "stock": 4,
-                "etiqueta": "Almohada",
-                "descripcion": "Almohada suavecita de plumas de ganso blancas",
-                "idCategoria": 40,
+                "id": 1026,
+                "nombre": "Lamparas de Pikachu rojas",
+                "precio": 4000,
+                "link": "/img/pikachu.png",
+                "stock": 20,
+                "etiqueta": "pikachu",
+                "descripcion": "Lamparas de Pikachus kawai pirateadas",
+                "idCategoria": 29,
                 "idSucursal": 6
               })  
         }); 
     }catch(error){
         console.log(`Error: ${error}`);
     }
-
 }
-
-//sucursal();
-//categoria();
 
 producto();
 borrarProducto(id);
