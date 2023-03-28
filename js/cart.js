@@ -24,7 +24,7 @@ async function producto(){
 }
 
 //Agregar Productos
-/*
+
 async function agregarProducto(){
     try{
         const respuesta = await fetch(URLProductos, { 
