@@ -52,10 +52,9 @@ async function agregarProducto(){
         console.log('Error: '+error);
  }
 }
-
-
+*/
 //Borrar producto
-let id = '1034';
+let id = '1044';
 
 
 async function borrarProducto(id){
@@ -97,5 +96,5 @@ async function modificarProducto(){
 
 producto();
 borrarProducto(id);
-modificarProducto()
+//modificarProducto()
 //agregarProducto();
