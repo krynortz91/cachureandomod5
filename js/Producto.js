@@ -1,16 +1,16 @@
 export class Producto{
     //Parametros de la clase 'Producto'
-    constructor(imagen,nombre,codigo,descripcion,precio,cantidad,stock){
-        this.imagen=imagen;
+    constructor(id,nombre,precio,link,stock,etiqueta,descripcion,idCategoria, idSucursal){
+        this.id=id;
         this.nombre=nombre;
-        this.codigo=codigo;
-        this.descripcion=descripcion;
         this.precio=precio;
-        this.cantidad=cantidad;
+        this.link=link;
         this.stock=stock;
-        
+        this.etiqueta=etiqueta;
+        this.descripcion=descripcion;
+        this.idCategoria=idCategoria;
+        this.idSucursal=idSucursal;
     }
 }
-
 
 export default Producto;

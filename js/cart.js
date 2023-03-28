@@ -9,6 +9,7 @@ const carrito= new Carrito('productos');
 let URLProductos = 'https://slifer.bsite.net/td-producto';
 let datos;
 
+
 //Mostrar Productos
 async function producto(){
     try{
@@ -43,6 +44,7 @@ async function agregarProducto(){
         })  
 }); 
 
+
     datos = await respuesta.json()
     console.log(datos);
 
@@ -51,9 +53,9 @@ async function agregarProducto(){
  }
 }
 */
-
 //Borrar producto
-let id = '1034';
+let id = '1044';
+
 
 async function borrarProducto(id){
     try{                     
@@ -67,7 +69,6 @@ async function borrarProducto(id){
             console.log(`Error: ${error}`);
     }
 }
-
 
 //Modificar productos
 async function modificarProducto(){
@@ -95,5 +96,5 @@ async function modificarProducto(){
 
 producto();
 borrarProducto(id);
-modificarProducto()
+//modificarProducto()
 //agregarProducto();
